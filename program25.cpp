@@ -1,0 +1,21 @@
+//To demonstrate a class template for creating a generic class
+#include <iostream>
+using namespace std;
+// Class template
+template <class T>
+class Box {
+private:
+ T value;
+public:
+ void setValue(T v) { value = v; }
+ T getValue() { return value; }
+};
+int main() {
+ Box<int> intBox;
+ Box<string> strBox;
+ intBox.setValue(100);
+ strBox.setValue("Hello Templates");
+ cout << "Integer Value: " << intBox.getValue() << endl;
+ cout << "String Value: " << strBox.getValue() << endl;
+ return 0;
+}
