@@ -1,0 +1,22 @@
+//To demonstrate the use of a friend function to access private data in C++
+#include <iostream>
+using namespace std;
+class Box {
+private:
+ int length;
+public:
+ Box(int l) {
+ length = l;
+ }
+ // Declare friend function
+ friend void printLength(Box b);
+};
+// Friend function definition
+void printLength(Box b) {
+ cout << "Length of box = " << b.length << endl;
+}
+int main() {
+ Box b1(15);
+printLength(b1); // accessing private data using friend function
+ return 0;
+}
